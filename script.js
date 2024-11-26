@@ -66,5 +66,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 <li><span class="material-icons">link</span> <a href="#">GIF Pack 1 for ${fcName}</a></li>
                 <li><span class="material-icons">link</span> <a href="#">GIF Pack 2 for ${fcName}</a></li>
             `;
-
+ 
            
