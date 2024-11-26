@@ -13,7 +13,7 @@ function openModal(fcName, links) {
     modalLinks.innerHTML = ''; // Clear previous links
     links.forEach(link => {
         const listItem = document.createElement('li');
-        listItem.innerHTML = `<span class="material-icons">link</span> <a href="${link.url}" target="_blank">${link.name}</a>`;
+        listItem.innerHTML = `<a href="${link.url}" target="_blank">${link.name}</a>`;
         modalLinks.appendChild(listItem);
     });
 
