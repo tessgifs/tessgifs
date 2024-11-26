@@ -116,11 +116,4 @@ h1 {
 
 .modal-links li {
     margin-bottom: 10px;
-    font-size: 10px; /* Ensure font size for the modal links is 10px */
-}
-
-.modal-links a {
-    color: #007bff;
-    text-decoration: none;
-    font-size: 10px; /* Set font size for links in the modal */
-}
+    font-size: 10px; /* Ensure font size for the modal links is 10px

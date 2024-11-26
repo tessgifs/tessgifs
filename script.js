@@ -1,6 +1,5 @@
 // Get the modal and its components
 const modal = document.getElementById('modal');
-const modalContent = document.querySelector('.modal-content');
 const closeModalButton = document.querySelector('.close');
 
 // Function to open the modal and populate it with data
