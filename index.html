@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIF Pack Directory</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>GIF Pack Directory</h1>
+      <p>Description of the site and rules for usage here...</p>
+    </header>
+
+    <!-- Filters Section -->
+    <div class="filters">
+      <input type="text" id="filter-name" placeholder="Filter by Name">
+      <select id="filter-gender">
+        <option value="">Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <input type="text" id="filter-year" placeholder="Filter by Year of Birth">
+      <input type="text" id="filter-ethnicity" placeholder="Filter by Ethnicity">
+      <input type="text" id="filter-hair-color" placeholder="Filter by Hair Color">
+      <input type="text" id="filter-eye-color" placeholder="Filter by Eye Color">
+    </div>
+
+    <!-- Grid of GIF Packs -->
+    <div class="grid">
+      <!-- Example gif pack 1 -->
+      <div class="gif-pack" data-name="John Doe" data-gender="male" data-year="1990" data-ethnicity="Caucasian" data-hair-color="Black" data-eye-color="Brown" data-links='[{"text":"John's Page 1","url":"https://example.com/johndoe1"},{"text":"John's Page 2","url":"https://example.com/johndoe2"}]'>
+        <img src="preview1.jpg" alt="Preview of John Doe" onclick="openModal('John Doe')">
+        <h3 onclick="openModal('John Doe')">John Doe</h3>
+        <p><strong>Full Birthdate:</strong> January 1, 1990</p>
+        <p><strong>Ethnicity:</strong> Caucasian</p>
+        <p><strong>Total GIFs:</strong> 100</p>
+        <p><strong>Source:</strong> Source Link</p>
+        <ul class="media-sources">
+          <li>Media Source 1</li>
+        </ul>
+      </div>
+      <!-- Example gif pack 2 -->
+      <div class="gif-pack" data-name="Jane Smith" data-gender="female" data-year="1985" data-ethnicity="Asian" data-hair-color="Blonde" data-eye-color="Green" data-links='[{"text":"Jane's Page 1","url":"https://example.com/janesmith1"},{"text":"Jane's Page 2","url":"https://example.com/janesmith2"}]'>
+        <img src="preview2.jpg" alt="Preview of Jane Smith" onclick="openModal('Jane Smith')">
+        <h3 onclick="openModal('Jane Smith')">Jane Smith</h3>
+        <p><strong>Full Birthdate:</strong> March 15, 1985</p>
+        <p><strong>Ethnicity:</strong> Asian</p>
+        <p><strong>Total GIFs:</strong> 75</p>
+        <p><strong>Source:</strong> Source Link</p>
+        <ul class="media-sources">
+          <li>Media Source 2</li>
+        </ul>
+      </div>
+      <!-- More gif-pack divs go here -->
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close material-icons">cancel</span>
+      <h2>Links for <span id="modal-name"></span></h2>
+      <ul class="modal-links" id="modal-links-list">
+        <!-- Links will be dynamically populated here -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
