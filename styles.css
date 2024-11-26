@@ -15,7 +15,7 @@ body {
 }
 
 h1 {
-    font-size: 2.5rem; /* Adjusted for readability */
+    font-size: 11px
     margin-bottom: 20px;
     text-align: center;
 }
@@ -28,7 +28,7 @@ h1 {
 #filters select, #filters input {
     padding: 5px;
     margin: 5px;
-    font-size: 1rem; /* Adjusted for readability */
+    font-size: 10px /* Adjusted for readability */
 }
 
 #cardGrid {
@@ -63,17 +63,17 @@ h1 {
 
 .card-info {
     padding: 10px;
-    font-size: 1rem; /* Adjusted for readability */
+    font-size: 10px; /* Adjusted for readability */
 }
 
 .card-info h2 {
-    font-size: 1.2rem;
+    font-size: 10px;
     font-weight: 700;
     margin-bottom: 5px;
 }
 
 .card-info p {
-    font-size: 1rem;
+    font-size: 10px;
     color: #666;
 }
 
@@ -100,7 +100,7 @@ h1 {
 }
 
 .close {
-    font-size: 1.5rem;
+    font-size: 10px;
     cursor: pointer;
     position: absolute;
     top: 10px;
@@ -119,7 +119,7 @@ h1 {
 .modal-links a {
     color: #007bff;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 10px;
 }
 
 .modal-links .material-icons {
