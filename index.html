@@ -3,66 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gif Packs Directory</title>
-    <!-- Google Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Google Fonts: Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>GIF Packs Directory</title>
+    <!-- Google Fonts: Montserrat & Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Gif Packs Directory</h1>
+    <header>
+        <h1>My GIF Packs Directory</h1>
+        <!-- Filter inputs for each category -->
+        <div id="filters">
+            <select id="genderFilter">
+                <option value="">All Genders</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
 
-    <!-- Filters Section -->
-    <div id="filters">
-        <select>
-            <option value="">Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
-        <select>
-            <option value="">Decade of Birth</option>
-            <option value="1980s">1980s</option>
-            <option value="1990s">1990s</option>
-        </select>
-        <input type="text" placeholder="Search by name..." />
-    </div>
+            <select id="decadeFilter">
+                <option value="">All Decades</option>
+                <option value="1990s">1990s</option>
+                <option value="2000s">2000s</option>
+                <option value="2010s">2010s</option>
+            </select>
 
-    <!-- Card Grid -->
-    <div id="cardGrid">
-        <!-- Example Card 1 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/250" alt="FC 1" />
-            <div class="card-info">
-                <h2 class="fc-name">FC 1</h2>
-                <p>Date of Birth: 1990</p>
-                <p>Ethnicity: Asian</p>
-            </div>
+            <select id="eyeColorFilter">
+                <option value="">All Eye Colors</option>
+                <option value="blue">Blue</option>
+                <option value="brown">Brown</option>
+                <option value="green">Green</option>
+            </select>
+
+            <select id="hairColorFilter">
+                <option value="">All Hair Colors</option>
+                <option value="blonde">Blonde</option>
+                <option value="brunette">Brunette</option>
+                <option value="redhead">Redhead</option>
+            </select>
+
+            <select id="ethnicityFilter">
+                <option value="">All Ethnicities</option>
+                <option value="caucasian">Caucasian</option>
+                <option value="asian">Asian</option>
+                <option value="african-american">African American</option>
+            </select>
+
+            <input type="number" id="gifCountFilter" placeholder="Min GIF count">
         </div>
-
-        <!-- Example Card 2 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/250" alt="FC 2" />
+    </header>
+    
+    <!-- Card grid -->
+    <div id="cardGrid">
+        <!-- Example Cards -->
+        <div class="card" data-gender="female" data-decade="2000s" data-eyecolor="blue" data-haircolor="blonde" data-ethnicity="caucasian" data-gifcount="100">
+            <img src="https://via.placeholder.com/250x150" alt="Example FC Image">
             <div class="card-info">
-                <h2 class="fc-name">FC 2</h2>
-                <p>Date of Birth: 1985</p>
+                <h2 class="fc-name">Jane Doe</h2>
+                <p>Date of Birth: 2002-05-14</p>
                 <p>Ethnicity: Caucasian</p>
             </div>
         </div>
-
-        <!-- Add more example cards as needed... -->
+        <div class="card" data-gender="male" data-decade="1990s" data-eyecolor="brown" data-haircolor="brunette" data-ethnicity="asian" data-gifcount="80">
+            <img src="https://via.placeholder.com/250x150" alt="Example FC Image">
+            <div class="card-info">
+                <h2 class="fc-name">John Smith</h2>
+                <p>Date of Birth: 1990-10-22</p>
+                <p>Ethnicity: Asian</p>
+            </div>
+        </div>
+        <div class="card" data-gender="female" data-decade="2010s" data-eyecolor="green" data-haircolor="blonde" data-ethnicity="caucasian" data-gifcount="120">
+            <img src="https://via.placeholder.com/250x150" alt="Example FC Image">
+            <div class="card-info">
+                <h2 class="fc-name">Alice Johnson</h2>
+                <p>Date of Birth: 1995-04-30</p>
+                <p>Ethnicity: Caucasian</p>
+            </div>
+        </div>
+        <div class="card" data-gender="male" data-decade="2000s" data-eyecolor="blue" data-haircolor="redhead" data-ethnicity="african-american" data-gifcount="150">
+            <img src="https://via.placeholder.com/250x150" alt="Example FC Image">
+            <div class="card-info">
+                <h2 class="fc-name">Robert Brown</h2>
+                <p>Date of Birth: 2000-03-12</p>
+                <p>Ethnicity: African American</p>
+            </div>
+        </div>
+        <div class="card" data-gender="female" data-decade="1990s" data-eyecolor="brown" data-haircolor="brunette" data-ethnicity="asian" data-gifcount="95">
+            <img src="https://via.placeholder.com/250x150" alt="Example FC Image">
+            <div class="card-info">
+                <h2 class="fc-name">Maria Garcia</h2>
+                <p>Date of Birth: 1998-07-11</p>
+                <p>Ethnicity: Asian</p>
+            </div>
+        </div>
+        <div class="card" data-gender="male" data-decade="2010s" data-eyecolor="blue" data-haircolor="brunette" data-ethnicity="caucasian" data-gifcount="110">
+            <img src="https://via.placeholder.com/250x150" alt="Example FC Image">
+            <div class="card-info">
+                <h2 class="fc-name">Michael White</h2>
+                <p>Date of Birth: 1992-09-09</p>
+                <p>Ethnicity: Caucasian</p>
+            </div>
+        </div>
+        <div class="card" data-gender="female" data-decade="2000s" data-eyecolor="green" data-haircolor="redhead" data-ethnicity="african-american" data-gifcount="80">
+            <img src="https://via.placeholder.com/250x150" alt="Example FC Image">
+            <div class="card-info">
+                <h2 class="fc-name">Sophia Lee</h2>
+                <p>Date of Birth: 2005-12-01</p>
+                <p>Ethnicity: African American</p>
+            </div>
+        </div>
+        <div class="card" data-gender="male" data-decade="1990s" data-eyecolor="green" data-haircolor="blonde" data-ethnicity="asian" data-gifcount="130">
+            <img src="https://via.placeholder.com/250x150" alt="Example FC Image">
+            <div class="card-info">
+                <h2 class="fc-name">James Nguyen</h2>
+                <p>Date of Birth: 1991-11-10</p>
+                <p>Ethnicity: Asian</p>
+            </div>
+        </div>
+        <div class="card" data-gender="female" data-decade="2000s" data-eyecolor="blue" data-haircolor="brunette" data-ethnicity="caucasian" data-gifcount="90">
+            <img src="https://via.placeholder.com/250x150" alt="Example FC Image">
+            <div class="card-info">
+                <h2 class="fc-name">Emily Clark</h2>
+                <p>Date of Birth: 2004-01-17</p>
+                <p>Ethnicity: Caucasian</p>
+            </div>
+        </div>
+        <div class="card" data-gender="male" data-decade="2010s" data-eyecolor="brown" data-haircolor="redhead" data-ethnicity="african-american" data-gifcount="100">
+            <img src="https://via.placeholder.com/250x150" alt="Example FC Image">
+            <div class="card-info">
+                <h2 class="fc-name">David Johnson</h2>
+                <p>Date of Birth: 2007-06-05</p>
+                <p>Ethnicity: African American</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Modal Structure -->
+    <!-- Modal -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2 class="modal-fc-name">FC Name</h2>
+            <h2 class="modal-fc-name"></h2>
             <ul class="modal-links">
-                <li><a href="https://example.com" target="_blank">Link 1</a></li>
-                <li><a href="https://example.com" target="_blank">Link 2</a></li>
-                <li><a href="https://example.com" target="_blank">Link 3</a></li>
+                <!-- Example Links -->
+                <li><span class="material-icons">link</span> <a href="#">GIF Pack 1</a></li>
+                <li><span class="material-icons">link</span> <a href="#">GIF Pack 2</a></li>
             </ul>
         </div>
     </div>

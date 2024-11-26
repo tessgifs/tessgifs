@@ -1,5 +1,6 @@
 // Get the modal and its components
 const modal = document.getElementById('modal');
+const modalContent = document.querySelector('.modal-content');
 const closeModalButton = document.querySelector('.close');
 
 // Function to open the modal and populate it with data
@@ -12,7 +13,7 @@ function openModal(fcName, links) {
     modalLinks.innerHTML = ''; // Clear previous links
     links.forEach(link => {
         const listItem = document.createElement('li');
-        listItem.innerHTML = `<a href="${link.url}" target="_blank">${link.name}</a>`;
+        listItem.innerHTML = `<span class="material-icons">link</span> <a href="${link.url}" target="_blank">${link.name}</a>`;
         modalLinks.appendChild(listItem);
     });
 

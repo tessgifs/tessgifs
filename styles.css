@@ -109,11 +109,21 @@ h1 {
 }
 
 .modal-links {
-    list-style: disc;  /* Use the default disc bullets */
-    padding-left: 20px; /* Add left padding for indentation */
-    margin: 0; /* Remove default margin */
+    list-style: none;
+    padding-left: 20px;
 }
 
 .modal-links li {
     margin-bottom: 10px;
-    font-size: 10px; /* Ensure font size for the modal links is 10px
+}
+
+.modal-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 10px; /* Set font size for links in the modal */
+}
+
+.modal-links .material-icons {
+    vertical-align: middle;
+    margin-right: 5px;
+}
