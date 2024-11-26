@@ -79,24 +79,51 @@ h1 {
 }
 
 /* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
 .modal-links {
     list-style: none;
     padding-left: 20px;
-    margin: 0; /* Remove default margin */
 }
 
 .modal-links li {
     margin-bottom: 10px;
-    font-size: 10px; /* Ensure font size for the modal links is 10px */
-    display: flex;
-    align-items: center; /* Align the icon and text properly */
 }
 
-/* Use Material Icon as bullet for list items */
-.modal-links li::before {
-    content: "link"; /* Use the 'link' icon */
-    font-family: 'Material Icons'; /* Ensure it's using the Material Icons font */
-    font-size: 12px; /* Adjust the icon size */
-    margin-right: 8px; /* Space between the icon and the link text */
-    vertical-align: middle; /* Align the icon with the text */
+.modal-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 10px; /* Set font size for links in the modal */
+}
+
+.modal-links .material-icons {
+    vertical-align: middle;
+    margin-right: 5px;
 }
