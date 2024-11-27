@@ -417,5 +417,65 @@
 
     </div>
 
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const filters = {
+        gender: document.getElementById("genderFilter"),
+        decade: document.getElementById("decadeFilter"),
+        eyeColor: document.getElementById("eyeColorFilter"),
+        hairColor: document.getElementById("hairColorFilter"),
+        ethnicity: document.getElementById("ethnicityFilter"),
+        gifCount: document.getElementById("gifCountFilter"),
+    };
+
+    const cards = document.querySelectorAll(".card");
+
+    const filterCards = () => {
+        const gender = filters.gender.value.toLowerCase();
+        const decade = filters.decade.value.toLowerCase();
+        const eyeColor = filters.eyeColor.value.toLowerCase();
+        const hairColor = filters.hairColor.value.toLowerCase();
+        const ethnicity = filters.ethnicity.value.toLowerCase();
+        const gifCount = filters.gifCount.value;
+
+        cards.forEach(card => {
+            const cardGender = card.getAttribute("data-gender").toLowerCase();
+            const cardDecade = card.getAttribute("data-decade").toLowerCase();
+            const cardEyeColor = card.getAttribute("data-eyecolor").toLowerCase();
+            const cardHairColor = card.getAttribute("data-haircolor").toLowerCase();
+            const cardEthnicity = card.getAttribute("data-ethnicity").toLowerCase();
+            const cardGifCount = parseInt(card.getAttribute("data-gifcount"), 10) || 0;
+
+            const matchesGender = !gender || cardGender === gender;
+            const matchesDecade = !decade || cardDecade === decade;
+            const matchesEyeColor = !eyeColor || cardEyeColor === eyeColor;
+            const matchesHairColor = !hairColor || cardHairColor === hairColor;
+            const matchesEthnicity = !ethnicity || cardEthnicity === ethnicity;
+            const matchesGifCount = !gifCount || cardGifCount >= parseInt(gifCount, 10);
+
+            if (matchesGender && matchesDecade && matchesEyeColor && matchesHairColor && matchesEthnicity && matchesGifCount) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    };
+
+    Object.values(filters).forEach(filter => {
+        filter.addEventListener("change", filterCards);
+    });
+});
+
+
+
+
+
 </body>
 </html>
