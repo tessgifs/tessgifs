@@ -423,7 +423,6 @@
 
 
 
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const filters = {
@@ -453,6 +452,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const cardEthnicity = card.getAttribute("data-ethnicity").toLowerCase();
             const cardGifCount = parseInt(card.getAttribute("data-gifcount"), 10) || 0;
 
+            // Check if each card matches all active filters
             const matchesGender = !gender || cardGender === gender;
             const matchesDecade = !decade || cardDecade === decade;
             const matchesEyeColor = !eyeColor || cardEyeColor === eyeColor;
@@ -460,14 +460,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const matchesEthnicity = !ethnicity || cardEthnicity === ethnicity;
             const matchesGifCount = !gifCount || cardGifCount >= parseInt(gifCount, 10);
 
+            // Show or hide cards based on filter criteria
             if (matchesGender && matchesDecade && matchesEyeColor && matchesHairColor && matchesEthnicity && matchesGifCount) {
-                card.style.display = "block";
+                card.style.display = "block"; // Show the card
             } else {
-                card.style.display = "none";
+                card.style.display = "none"; // Hide the card
             }
         });
     };
 
+    // Add event listeners to each filter
     Object.values(filters).forEach(filter => {
         filter.addEventListener("change", filterCards);
     });
