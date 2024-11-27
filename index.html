@@ -12,43 +12,57 @@
     <header>
         <h1>My GIF Packs Directory</h1>
         <!-- Filter inputs for each category -->
-        <div id="filters">
-            <select id="genderFilter">
-                <option value="">All Genders</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
+<div>
+    <label for="genderFilter">Gender</label>
+    <select id="genderFilter">
+        <option value="">All</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="non-binary">Non-binary</option>
+    </select>
+</div>
 
-            <select id="decadeFilter">
-                <option value="">All Decades</option>
-                <option value="1990s">1990s</option>
-                <option value="2000s">2000s</option>
-                <option value="2010s">2010s</option>
-            </select>
+<div>
+    <label for="decadeFilter">Decade</label>
+    <select id="decadeFilter">
+        <option value="">All</option>
+        <option value="1980s">1980s</option>
+        <option value="1990s">1990s</option>
+    </select>
+</div>
 
-            <select id="eyeColorFilter">
-                <option value="">All Eye Colors</option>
-                <option value="blue">Blue</option>
-                <option value="brown">Brown</option>
-                <option value="green">Green</option>
-            </select>
+<div>
+    <label for="eyeColorFilter">Eye Color</label>
+    <select id="eyeColorFilter">
+        <option value="">All</option>
+        <option value="blue">Blue</option>
+        <option value="brown">Brown</option>
+    </select>
+</div>
 
-            <select id="hairColorFilter">
-                <option value="">All Hair Colors</option>
-                <option value="blonde">Blonde</option>
-                <option value="brunette">Brunette</option>
-                <option value="redhead">Redhead</option>
-            </select>
+<div>
+    <label for="hairColorFilter">Hair Color</label>
+    <select id="hairColorFilter">
+        <option value="">All</option>
+        <option value="blonde">Blonde</option>
+        <option value="brown">Brown</option>
+    </select>
+</div>
 
-            <select id="ethnicityFilter">
-                <option value="">All Ethnicities</option>
-                <option value="caucasian">Caucasian</option>
-                <option value="asian">Asian</option>
-                <option value="african-american">African American</option>
-            </select>
+<div>
+    <label for="ethnicityFilter">Ethnicity</label>
+    <select id="ethnicityFilter">
+        <option value="">All</option>
+        <option value="caucasian">Caucasian</option>
+        <option value="turkish">Turkish</option>
+    </select>
+</div>
 
-            <input type="number" id="gifCountFilter" placeholder="Min GIF count">
-        </div>
+<div>
+    <label for="gifCountFilter">Minimum GIF Count</label>
+    <input type="number" id="gifCountFilter" placeholder="Enter number" />
+</div>
+
     </header>
     
     <!-- Card grid -->
@@ -424,6 +438,7 @@
 
 
 <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
     const filters = {
         gender: document.getElementById("genderFilter"),
@@ -437,6 +452,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".card");
 
     const filterCards = () => {
+        // Get filter values
         const gender = filters.gender.value.toLowerCase();
         const decade = filters.decade.value.toLowerCase();
         const eyeColor = filters.eyeColor.value.toLowerCase();
@@ -444,7 +460,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const ethnicity = filters.ethnicity.value.toLowerCase();
         const gifCount = filters.gifCount.value;
 
+        // Loop through all cards and apply filters
         cards.forEach(card => {
+            // Get data-* attributes from each card
             const cardGender = card.getAttribute("data-gender").toLowerCase();
             const cardDecade = card.getAttribute("data-decade").toLowerCase();
             const cardEyeColor = card.getAttribute("data-eyecolor").toLowerCase();
@@ -452,7 +470,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const cardEthnicity = card.getAttribute("data-ethnicity").toLowerCase();
             const cardGifCount = parseInt(card.getAttribute("data-gifcount"), 10) || 0;
 
-            // Check if each card matches all active filters
+            // Check if card matches all active filters
             const matchesGender = !gender || cardGender === gender;
             const matchesDecade = !decade || cardDecade === decade;
             const matchesEyeColor = !eyeColor || cardEyeColor === eyeColor;
@@ -460,7 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const matchesEthnicity = !ethnicity || cardEthnicity === ethnicity;
             const matchesGifCount = !gifCount || cardGifCount >= parseInt(gifCount, 10);
 
-            // Show or hide cards based on filter criteria
+            // Show or hide the card based on the filter match
             if (matchesGender && matchesDecade && matchesEyeColor && matchesHairColor && matchesEthnicity && matchesGifCount) {
                 card.style.display = "block"; // Show the card
             } else {
@@ -469,10 +487,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // Add event listeners to each filter
+    // Add event listeners for each filter
     Object.values(filters).forEach(filter => {
         filter.addEventListener("change", filterCards);
     });
+
+    // Initialize filter on page load
+    filterCards();
 });
 </script>
 
