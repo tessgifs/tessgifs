@@ -1,501 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>tessgifs gif pack directory</title>
 <head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIF Packs Directory</title>
-    <!-- Google Fonts: Montserrat & Roboto -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Card Grid</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Itim&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style>
+
+    <style>
+        /* Header styling */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #141414;
+    color: #FFFFFF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px 15px;
+    text-align: center;
+}
+
+/* Title styling */
+header h1 {
+    font-family: 'Itim', cursive;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #EF75B9;
+    margin: 0;
+    background: linear-gradient(to right, #F1C40F, #FFD1B3, #EF75B9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Description and rules styling */
+header .description {
+    font-size: 12px;
+    color: #FFD1B3;
+    margin: 10px 0 20px;
+}
+
+/* Social icon links */
+header .social-links {
+    display: flex;
+    gap: 10px; /* Space between icons */
+    justify-content: center; /* Center-align the icons */
+    margin-top: 10px;
+}
+
+header .social-icon {
+    color: #EF75B9; /* Pink color */
+    font-size: 24px; /* Size of the icons */
+    transition: transform 0.3s, color 0.3s; /* Smooth hover effect */
+    background: linear-gradient(to bottom, #F1C40F, #EF75B9);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header .social-icon:hover {
+    color: #F1C40F; /* Gold on hover */
+    transform: scale(1.2); /* Slight zoom effect */
+}
+
+/* Filter container */
+header .filters {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #202020;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Individual filter styling */
+header .filters label {
+    font-size: 10px;
+    font-weight: bold;
+    color: #FFf;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+
+header .filters select {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color: #FFFFFF;
+    background-color: #141414;
+    border: 1px solid #EF75B9;
+    border-radius: 4px;
+    padding: 3px 6px;
+    margin: 0 5px;
+}
+
+header .filters select:hover {
+    border-color: #F1C40F;
+}
+        
+        body {
+            font-family: montserrat;
+            font-size: 10px;
+            background-color: #202020;
+        }
+
+        a {
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #EF75B9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #F1C40F;
+            text-decoration: underline;
+        }
+
+        h4 {
+            display: inline;
+            margin: 0;
+            padding: 0;
+            font-weight: 200;
+            font-size: 10px;
+            line-height: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Card container (the whole grid) */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Cards will be responsive */
+            gap: 20px; /* Space between cards */
+            justify-content: center; /* Center the grid horizontally */
+            max-width: 1550px; /* Set the maximum width of the grid */
+            margin: 0 auto; /* Center the grid inside its container */
+            padding: 20px;
+        }
+
+       
+       
+  /* Individual card styles */
+.card {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 15px rgba(241, 196, 15, 0.4); /* Soft glow effect */
+    transition: box-shadow 0.3s ease-in-out; /* Add smooth transition for hover effect */
+}
+
+/* Optional hover effect for the glow to intensify */
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 25px rgba(255, 105, 180, 0.6); /* Stronger glow on hover */
+}     
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+        /* Image inside the card */
+        .card img {
+            width: 100%; /* Ensure image takes up the full width */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+        }
+
+        /* Card information section */
+        .card-info {
+            padding: 10px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        /* FC name */
+        .card-info .fc-name {
+            font-family: itim;
+            font-size: 16px;
+            font-weight: 900;
+            line-height: 24px;
+            margin-top: 2px;
+            margin-bottom: 1px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            background: linear-gradient(to right, #F1C40F, #FFD1B3, #EF75B9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Paragraph text styles */
+        .card-info p {
+            font-size: 12px;
+            color: #555;
+            margin: 5px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+        }
+
+        .card-info b {
+            font-size: 12px;
+            color: #555;
+            margin: 5px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>My GIF Packs Directory</h1>
-        <!-- Filter inputs for each category -->
-<div>
-    <label for="genderFilter">Gender</label>
-    <select id="genderFilter">
-        <option value="">All</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="non-binary">Non-binary</option>
-    </select>
+<header>
+    <h1>Tessgifs</h1>
+    <p class="description">Welcome to Tessgifs! Explore the collection and use the filters below to narrow your search. Please read the rules before using the gifs.</p>
+   <div class="social-links">
+    <a href="YOUR_TUMBLR_LINK" target="_blank" class="social-icon">
+        <i class="fab fa-tumblr"></i>
+    </a>
+    <a href="YOUR_DISCORD_LINK" target="_blank" class="social-icon">
+        <i class="fab fa-discord"></i>
+    </a>
 </div>
 
-<div>
-    <label for="decadeFilter">Decade</label>
-    <select id="decadeFilter">
-        <option value="">All</option>
-        <option value="1980s">1980s</option>
-        <option value="1990s">1990s</option>
-    </select>
-</div>
+    <div class="filters">
+        <label for="gender-filter">Gender:</label>
+        <select id="gender-filter">
+            <option value="">All</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <label for="decade-filter">Decade:</label>
+        <select id="decade-filter">
+            <option value="">All</option>
+            <option value="1990s">1990s</option>
+            <option value="2000s">2000s</option>
+        </select>
+        <label for="eyecolor-filter">Eye Color:</label>
+        <select id="eyecolor-filter">
+            <option value="">All</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="brown">Brown</option>
+        </select>
+        <label for="haircolor-filter">Hair Color:</label>
+        <select id="haircolor-filter">
+            <option value="">All</option>
+            <option value="blonde">Blonde</option>
+            <option value="brunette">Brunette</option>
+            <option value="black">Black</option>
+        </select>
+    </div>
+</header>
 
-<div>
-    <label for="eyeColorFilter">Eye Color</label>
-    <select id="eyeColorFilter">
-        <option value="">All</option>
-        <option value="blue">Blue</option>
-        <option value="brown">Brown</option>
-    </select>
-</div>
 
-<div>
-    <label for="hairColorFilter">Hair Color</label>
-    <select id="hairColorFilter">
-        <option value="">All</option>
-        <option value="blonde">Blonde</option>
-        <option value="brown">Brown</option>
-    </select>
-</div>
 
-<div>
-    <label for="ethnicityFilter">Ethnicity</label>
-    <select id="ethnicityFilter">
-        <option value="">All</option>
-        <option value="caucasian">Caucasian</option>
-        <option value="turkish">Turkish</option>
-    </select>
-</div>
 
-<div>
-    <label for="gifCountFilter">Minimum GIF Count</label>
-    <input type="number" id="gifCountFilter" placeholder="Enter number" />
-</div>
+    <div class="card-container">
+        <div class="card" data-gender="female" data-decade="1990s" data-eyecolor="blue" data-haircolor="blonde" data-ethnicity="caucasian" data-gifcount="500">
+            <img src="https://via.placeholder.com/250x150" alt="Placeholder Image 1">
+            <div class="card-info">
+                <h2 class="fc-name">Placeholder Name 1</h2>
+                <p class="birthdate"><b>Date of Birth:</b> Placeholder Date 1</p>
+                <p class="ethnicity"><b>Ethnicity:</b> Placeholder Ethnicity 1</p>
+                <p class="gif-count"><b>GIF Count:</b> Placeholder Count 1</p>
+                <br>
+                <div class="links">
+                    <a href="#">Link Text 1</a><h4> ♡︎ </h4>
+                    <a href="#">Link Text 2</a><h4> ♡︎ </h4>
+                    <a href="#">Link Text 3</a><h4> ♡︎ </h4>
+                    <a href="#">Link Text 4</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-gender="female" data-decade="1990s" data-eyecolor="blue" data-haircolor="blonde" data-ethnicity="caucasian" data-gifcount="500">
+            <img src="https://via.placeholder.com/250x150" alt="Placeholder Image 2">
+            <div class="card-info">
+                <h2 class="fc-name">Placeholder Name 2</h2>
+                <p class="birthdate"><b>Date of Birth:</b> Placeholder Date 2</p>
+                <p class="ethnicity"><b>Ethnicity:</b> Placeholder Ethnicity 2</p>
+                <p class="gif-count"><b>GIF Count:</b> Placeholder Count 2</p>
+                <br>
+                <div class="links">
+                    <a href="#">Link Text 1</a><h4> ♡︎ </h4>
+                    <a href="#">Link Text 2</a><h4> ♡︎ </h4>
+                    <a href="#">Link Text 3</a><h4> ♡︎ </h4>
+                    <a href="#">Link Text 4</a>
+                </div>
+            </div>
+        </div>
+        
+            <!-- Bruna Mascarenhas -->
+    <div class="card" data-gender="female" data-decade="1990s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="brazilian" data-gifcount="346">
+        <img src="https://66.media.tumblr.com/a31c10b0ab7e0a4b56222c0f4a5bf5ae/ec988098eebce49a-50/s540x810/4cc735ed53d74637fa1597f094bab1b702ea408b.gif" alt="Bruna Mascarenhas">
+        <div class="card-info">
+            <h2 class="fc-name">Bruna Mascarenhas</h2>
+            <p class="birthdate"><b>Date of Birth:</b> Aug 21, 1994</p>
+            <p class="ethnicity"><b>Ethnicity:</b> Brazilian</p>
+            <p class="gif-count"><b>GIF Count:</b> 346</p>
+            <br>
+            <div class="links">
+                <a href="https://sites.google.com/view/tessgifs/b/bruna-mascarenhas/sintonia-s1">SINTONIA (S1)</a>
+            </div>
+        </div>
+    </div>
 
-    </header>
-    
-    <!-- Card grid -->
-    <div id="cardGrid">
-        <!-- Example Cards -->
+    <!-- Burak Celik -->
+    <div class="card" data-gender="male" data-decade="1980s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="turkish" data-gifcount="1332">
+        <img src="https://64.media.tumblr.com/73dfd22e56a8b123669b9db4825d2f66/2ebe423b0d47d370-c8/s540x810/14d28019b1d7a5381fbea7775d1e95ea177c9d1c.gif" alt="Burak Celik">
+        <div class="card-info">
+            <h2 class="fc-name">Burak Celik</h2>
+            <p class="birthdate"><b>Date of Birth:</b> May 9, 1987</p>
+            <p class="ethnicity"><b>Ethnicity:</b> Turkish</p>
+            <p class="gif-count"><b>GIF Count:</b> 1332</p>
+            <br>
+            <div class="links">
+                <a href="https://sites.google.com/view/tessgifs2023/burak-celik-in-senden-daha-guzel">SENDEN DAHA GUZEL (1-5)</a>
+            </div>
+        </div>
+    </div>
 
-<div class="card" data-gender="male" data-decade="1980s" data-eyecolor="blue" data-haircolor="blonde" data-ethnicity="caucasian" data-gifcount="699">
-    <img src="https://64.media.tumblr.com/003751d0cf6749f322ee3aea9120d048/237115a7e655b087-e0/s540x810/5c1b9566b691101eb0f3b6ebf7b31db041234fd0.gif" alt="Aaron Tveit">
-    <div class="card-info">
-        <h2 class="fc-name">Aaron Tveit</h2>
-        <p>Date of Birth: Oct 21, 1983</p>
-        <p>Ethnicity: Caucasian</p>
-        <p>Links: 
-            <a href="https://sites.google.com/view/tessgifs2023/aaron-tveit/graceland-s3">graceland</a>
-        </p>
+    <!-- Burak Deniz -->
+    <div class="card" data-gender="male" data-decade="1990s" data-eyecolor="brown" data-haircolor="dark brown" data-ethnicity="turkish" data-gifcount="82">
+        <img src="https://66.media.tumblr.com/bb5931947eda032da03404b960d1c627/tumblr_inline_prxjncdNje1uy9est_540.gif" alt="Burak Deniz">
+        <div class="card-info">
+            <h2 class="fc-name">Burak Deniz</h2>
+            <p class="birthdate"><b>Date of Birth:</b> Nov 17, 1991</p>
+            <p class="ethnicity"><b>Ethnicity:</b> Turkish</p>
+            <p class="gif-count"><b>GIF Count:</b> 82</p>
+            <br>
+            <div class="links">
+                <a href="https://sites.google.com/view/tessgifs/b/burak-deniz/ask-laftan-anlamaz-1">ASK LAFTAN ANLAMAZ (1)</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Burcu Ozberk -->
+    <div class="card" data-gender="female" data-decade="1980s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="turkish" data-gifcount="9814">
+        <img src="https://64.media.tumblr.com/126407b36864f4dc02bc66cb52ceca3f/d07002b3432a7b19-26/s540x810/af85b4ad5e54b118b54428314f9c29633e62194d.gif" alt="Burcu Ozberk">
+        <div class="card-info">
+            <h2 class="fc-name">Burcu Ozberk</h2>
+            <p class="birthdate"><b>Date of Birth:</b> Dec 12, 1989</p>
+            <p class="ethnicity"><b>Ethnicity:</b> Turkish</p>
+            <p class="gif-count"><b>GIF Count:</b> 9,814</p>
+            <br>
+            <div class="links">
+                <a href="https://sites.google.com/view/tessgifs2023/burcu-ozberk/afili-ask-directory">AFILI ASK (MISC)</a>,
+                <a href="https://sites.google.com/view/tessgifs2023/burcu-ozberk/ask-mantik-intikam-directory">ASK MANTIK INTIKAM (MISC)</a>,
+                <a href="https://sites.google.com/view/tessgifs/b/burcu-ozberk/cocukluk-misc">COCUKLUK (MISC)</a>,
+                <a href="https://sites.google.com/view/tessgifs2023/burcu-ozberk/kralice-1">KRALICE (1)</a>,
+                <a href="https://sites.google.com/view/tessgifs2023/burcu-ozberk/rüyanda-görürsün">RUYANDA GORURSUN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Burcu Biricik -->
+    <div class="card" data-gender="female" data-decade="1980s" data-eyecolor="blue" data-haircolor="blonde" data-ethnicity="turkish" data-gifcount="1171">
+        <img src="https://64.media.tumblr.com/75357d87dcfe73eb2a3e60426e6128c0/deff095d4613901c-b7/s540x810/89150d89fd89ebd37f22ac2149079a447e4e3053.gif" alt="Burcu Biricik">
+        <div class="card-info">
+            <h2 class="fc-name">Burcu Biricik</h2>
+            <p class="birthdate"><b>Date of Birth:</b> May 4, 1989</p>
+            <p class="ethnicity"><b>Ethnicity:</b> Turkish</p>
+            <p class="gif-count"><b>GIF Count:</b> 1,171</p>
+            <br>
+            <div class="links">
+                <a href="https://sites.google.com/view/tessgifs/b/burcu-biricik/kuzgun-1">Kuzgun (1)</a>,
+                <a href="https://sites.google.com/view/tessgifs/b/burcu-biricik/kuzgun-8">Kuzgun (8)</a>,
+                <a href="https://sites.google.com/view/tessgifs/b/burcu-biricik/kuzgun-9">Kuzgun (9)</a>,
+                <a href="https://sites.google.com/view/tessgifs/b/burcu-biricik/hayat-sarkisi-18">Hayat Sarkısı (18)</a>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="card" data-gender="female" data-decade="1980s" data-eyecolor="blue" data-haircolor="blonde" data-ethnicity="caucasian" data-gifcount="1043">
-    <img src="https://64.media.tumblr.com/1ce03447092653cfd3478104c571273d/9f3320539766ebbe-3e/s250x400/0451eff20399f4d273d4102aa125d2d99986fc2c.gif" alt="Abigail Spencer">
-    <div class="card-info">
-        <h2 class="fc-name">Abigail Spencer</h2>
-        <p>Date of Birth: Aug 4, 1981</p>
-        <p>Ethnicity: Caucasian</p>
-        <p>Links: 
-            <a href="https://drive.google.com/file/d/1URNjUrs4XWYr2MTWm6lTASPfcj5SElLG/edit?pli=1">suits</a>, 
-            <a href="https://drive.google.com/file/d/1V-GcCfVy9sasn0hRbp0sNFAcg7-XK6_A/edit">timeless</a>, 
-            <a href="https://sites.google.com/view/tessgifsx/a/greys-anatomy">greys anatomy</a>
-        </p>
     </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1990s" data-eyecolor="brown" data-haircolor="black" data-ethnicity="african american" data-gifcount="116">
-    <img src="https://64.media.tumblr.com/3342b88ec78e25c15dd5557536203bb5/ec988098eebce49a-5c/s540x810/c0024339088ece53febd5f6930c9b19681c4cfa1.gif" alt="Adriyan Rae">
-    <div class="card-info">
-        <h2 class="fc-name">Adriyan Rae</h2>
-        <p>Date of Birth: Sep 7, 1991</p>
-        <p>Ethnicity: African American</p>
-        <p>Links: 
-            <a href="https://sites.google.com/view/tessgifs/a/adriyan-rae/chicago-fire-s9">chicago fire s9</a>
-        </p>
-    </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1990s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="turkish" data-gifcount="5477">
-    <img src="https://64.media.tumblr.com/02598217fec2639d17573f99216aed0e/0fdbbc3c595e5615-eb/s400x600/38f3bd33fa43e5a47228e3d422331568c6544ee6.gif" alt="Afra Saracoglu">
-    <div class="card-info">
-        <h2 class="fc-name">Afra Saracoglu</h2>
-        <p>Date of Birth: Nov 2, 1992</p>
-        <p>Ethnicity: Turkish</p>
-        <p>Links: 
-            <a href="https://sites.google.com/view/tessgifs/a/afra-saracoglu/ask-bu-mu">ask bu mu</a>, 
-            <a href="https://sites.google.com/view/tessgifs2023/afra-saracoglu/afra-kardes-cocuklari">kardes cocuklari misc</a>, 
-            <a href="https://sites.google.com/view/tessgifs2023/afra-saracoglu/afra-yali-capkini">yali capkini</a>, 
-            <a href="https://sites.google.com/view/tessgifsx/a/afra-saracoglu/yali-capkini-misc-1">misc 1</a>, 
-            <a href="https://sites.google.com/view/tessgifsx/a/afra-saracoglu/yali-capkini-misc-2">misc 2</a>
-        </p>
-    </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1990s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="turkish" data-gifcount="1120">
-    <img src="https://64.media.tumblr.com/1e3f8795f9dc8620f3c057ca6f3b6878/ec988098eebce49a-a6/s540x810/91c60c4e011eda432cadf649a2d279dffd7bcade.gif" alt="Ahsen Eroglu">
-    <div class="card-info">
-        <h2 class="fc-name">Ahsen Eroglu</h2>
-        <p>Date of Birth: Dec 2, 1993</p>
-        <p>Ethnicity: Turkish</p>
-        <p>Links: 
-            <a href="https://sites.google.com/view/tessgifs/a/ahsen-eroglu/kuzgun-19-21">kuzgun 19-21</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/ahsen-eroglu/menajerimi-ara-misc-1">menajerimi ara misc 1</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/ahsen-eroglu/menajerimi-ara-misc-2">menajerimi ara misc 2</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/ahsen-eroglu/menajerimi-ara-39">menajerimi ara 39</a>
-        </p>
-    </div>
-</div>
-<div class="card" data-gender="female" data-decade="1980s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="latina" data-gifcount="400">
-    <img src="https://64.media.tumblr.com/6a9b435457147492869357660af9ed0f/7e34a92e9fc9953a-e6/s540x810/d683dc6afaca0b81a1b755393482de84df06b864.gif" alt="Aimee Carrero">
-    <div class="card-info">
-        <h2 class="fc-name">Aimee Carrero</h2>
-        <p>Date of Birth: Jul 15, 1988</p>
-        <p>Ethnicity: Latina</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs/a/aimee-carrero/misc">misc</a></p>
-    </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1990s" data-eyecolor="brown" data-haircolor="blonde" data-ethnicity="caucasian" data-gifcount="659">
-    <img src="https://64.media.tumblr.com/37b4777bce27337ff4eea619a0ac89ff/a836ccf2bfa4c037-03/s540x810/1fc65d48be76a45fe0c0da32cc159599b3271241.gif" alt="AJ Michalka">
-    <div class="card-info">
-        <h2 class="fc-name">AJ Michalka</h2>
-        <p>Date of Birth: Apr 10, 1991</p>
-        <p>Ethnicity: Caucasian</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs/a/aj-michalka/schooled-pt-1">Schooled Season 1 Pt 1</a>, <a href="https://sites.google.com/view/tessgifs/a/aj-michalka/schooled-pt-2">Season 1 Pt 2</a></p>
-    </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1990s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="turkish" data-gifcount="554">
-    <img src="https://64.media.tumblr.com/fdf3fa464b955486fabc978189f72c37/8c75ff3cb43efd91-0c/s540x810/bdefbc0082d6910355d4732f9d8030e095cef6d3.gif" alt="Alara Turan">
-    <div class="card-info">
-        <h2 class="fc-name">Alara Turan</h2>
-        <p>Date of Birth: Oct 12, 1998</p>
-        <p>Ethnicity: Turkish</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs/a/alara-turan/kardes-cocuklari-misc">Kardes Cocuklari (Misc)</a>, <a href="https://sites.google.com/view/tessgifs/a/alara-turan/evlilik-hakkinda-her-sey-15-16">Evlilik Hakkinda Her Sey (15-16)</a>, <a href="https://sites.google.com/view/tessgifs/a/alara-turan/evlilik-hakkinda-her-sey-17-20">Evlilik Hakkinda Her Sey (17-20)</a></p>
-    </div>
-</div>
-
-<div class="card" data-gender="male" data-decade="1990s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="hispanic" data-gifcount="982">
-    <img src="https://64.media.tumblr.com/98355bd904f4f5f643a87859d6bf187a/22932691379ac9c0-3b/s540x810/4d75a70a892e23d3fe8396e21e7839051c8c1ee6.gif" alt="Alberto Rosende">
-    <div class="card-info">
-        <h2 class="fc-name">Alberto Rosende</h2>
-        <p>Date of Birth: Feb 14, 1993</p>
-        <p>Ethnicity: Hispanic</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs2023/alberto-rosede/alberto-cf">Chicago Fire (Misc)</a></p>
-    </div>
-</div>
-
-<div class="card" data-gender="male" data-decade="1990s" data-eyecolor="blue" data-haircolor="blonde" data-ethnicity="caucasian" data-gifcount="145">
-    <img src="https://66.media.tumblr.com/e2e3933fab2c166fc7a4503c3f6644ba/ec988098eebce49a-3a/s540x810/a3c7a563725b08fa9cda6e74c62234c8d9795458.gif" alt="Alex Fitzalan">
-    <div class="card-info">
-        <h2 class="fc-name">Alex Fitzalan</h2>
-        <p>Date of Birth: Jul 26, 1996</p>
-        <p>Ethnicity: Caucasian</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs/a/alex-fitzalan/the-society-102-103">The Society</a></p>
-    </div>
-</div>
-
-
-<div class="card" data-gender="male" data-decade="1980s" data-eyecolor="brown" data-haircolor="black" data-ethnicity="filipino" data-gifcount="505">
-    <img src="https://64.media.tumblr.com/3ad05c71fb497d46909560711789745a/1b372d1ee9acd10d-22/s540x810/4a92adc0a635d252630d6c08d9c93fa43e226e48.gif" alt="Alex Mallari Junior">
-    <div class="card-info">
-        <h2 class="fc-name">Alex Mallari Junior</h2>
-        <p>Date of Birth: Oct 13, 1988</p>
-        <p>Ethnicity: Filipino</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs2023/alex-mallari-jr">Workin Moms & One Delicious Christmas</a></p>
-    </div>
-</div>
-
-<div class="card" data-gender="male" data-decade="1990s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="maori" data-gifcount="107">
-    <img src="https://64.media.tumblr.com/159d51ffd08aa84e3f645b1e49ea3de0/a836ccf2bfa4c037-af/s540x810/c632524376c45a3680371e97ad7ad0ee44c5a1d9.gif" alt="Alex Tarrant">
-    <div class="card-info">
-        <h2 class="fc-name">Alex Tarrant</h2>
-        <p>Date of Birth: Mar 20, 1992</p>
-        <p>Ethnicity: Māori</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs/a/alex-tarrant/ncis-hawaii">NCIS: Hawaii</a></p>
-    </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1980s" data-eyecolor="brown" data-haircolor="blonde" data-ethnicity="caucasian" data-gifcount="228">
-    <img src="https://64.media.tumblr.com/ad47cf94f933a358ebb53f9fd535bd23/7adbfc9218d71b3d-89/s540x810/19efa2e77398e142219c0d0895447f7feadce23b.gif" alt="Alexandra Park">
-    <div class="card-info">
-        <h2 class="fc-name">Alexandra Park</h2>
-        <p>Date of Birth: May 14, 1989</p>
-        <p>Ethnicity: Caucasian</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs/a/alexandra-park/the-royals">The Royals S4</a></p>
-    </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1990s" data-eyecolor="blue" data-haircolor="blonde" data-ethnicity="russian-turkish" data-gifcount="522">
-    <img src="https://64.media.tumblr.com/f7f065731ca81694320089ee4e4e00bb/c1459c9f85d1636f-c4/s540x810/4a8f939a82eaadd612429843e3f5e1f6fe69f975.gif" alt="Alina Boz">
-    <div class="card-info">
-        <h2 class="fc-name">Alina Boz</h2>
-        <p>Date of Birth: Oct 14, 1998</p>
-        <p>Ethnicity: Russian-Turkish</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs/a/alina-boz/elimi-birakma-1">Elimi Birakma 1</a>, <a href="https://sites.google.com/view/tessgifs/a/alina-boz/elimi-birakma-misc">Elimi Birakma (Misc)</a></p>
-    </div>
-</div>
-
-<div class="card" data-gender="male" data-decade="1990s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="turkish" data-gifcount="4538">
-    <img src="https://64.media.tumblr.com/088c7a950f9682994fd915f12299cda1/a97d1eee809d2ee2-32/s540x810/2ab06ff835818e32892cd39fcf393ff611d3dc58.gif" alt="Alperen Duymaz">
-    <div class="card-info">
-        <h2 class="fc-name">Alperen Duymaz</h2>
-        <p>Date of Birth: Nov 3, 1992</p>
-        <p>Ethnicity: Turkish</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs2023/alperen-duymaz/carpisma-nav">Carpisma (Misc)</a>, <a href="https://sites.google.com/view/tessgifs2023/alperen-duymaz/son-yaz-nav">Son Yaz (21-22)</a>, <a href="https://sites.google.com/view/tessgifs/a/alperen-duymaz/zemheri-misc">Zemheri (Misc)</a>, <a href="https://sites.google.com/view/tessgifs2023/alperen-duymaz/erkek-severse-nav">Erkek Severse (1-4)</a>, <a href="https://sites.google.com/view/tessgifs2023/alperen-duymaz/cukur-nav">Cukur (17-33)</a></p>
-    </div>
-</div>
-
-
-<div class="card" data-gender="male" data-decade="1990s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="turkish" data-gifcount="3235">
-    <img src="https://64.media.tumblr.com/25a01178dd0bbb5a514e85024cea5af7/a836ccf2bfa4c037-5b/s540x810/e4cf3701b3ccb442a853102a0c067174410b5aac.gif" alt="Alp Navruz">
-    <div class="card-info">
-        <h2 class="fc-name">Alp Navruz</h2>
-        <p>Date of Birth: Jan 15, 1990</p>
-        <p>Ethnicity: Turkish</p>
-        <p>Links: 
-            <a href="https://sites.google.com/view/tessgifs2023/alp-navruz/ada-masali-nav">Ada Masali (Misc Eps)</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/alp-navruz/elimi-birakma-39">Elimi Birakma (39)</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/alp-navruz/zumruduanka-13">Zumruduanka (13)</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/alp-navruz/fhvk-14">Fazilet Hanim ve Kizlari (14)</a>, 
-            <a href="https://sites.google.com/view/tessgifs2023/alp-navruz/yurek-cikmazi-misc">Yurek Cikmazi (Misc)</a>
-        </p>
-    </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1980s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="latina" data-gifcount="1661">
-    <img src="https://64.media.tumblr.com/3e990d863050a74f0938c06ccfc7b136/20289ce9ac5bf1ae-2d/s540x810/380676b69c7554f90d27a4a8229588c3336f99e8.gif" alt="Alyssa Diaz">
-    <div class="card-info">
-        <h2 class="fc-name">Alyssa Diaz</h2>
-        <p>Date of Birth: Sep 7, 1985</p>
-        <p>Ethnicity: Latina</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs2023/alyssa-diaz/alyssa-diaz-the-rookie">The Rookie Season 1-S5</a></p>
-    </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1990s" data-eyecolor="blue" data-haircolor="blonde" data-ethnicity="caucasian" data-gifcount="471">
-    <img src="https://64.media.tumblr.com/58499eebf3575c103373944fba72fb19/34d4a2c8144684b7-3e/s540x810/3d1f032c238e15e47bdd88e6d5e1666fe14d942d.gif" alt="Andrea Dodero">
-    <div class="card-info">
-        <h2 class="fc-name">Andrea Dodero</h2>
-        <p>Date of Birth: Aug 10, 1991</p>
-        <p>Ethnicity: Caucasian</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs2023/andrea-dodero/blocco-181-s1-andrea-dodero">Blocco 181</a></p>
-    </div>
-</div>
-
-<div class="card" data-gender="male" data-decade="1970s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="jewish, caucasian" data-gifcount="133">
-    <img src="https://64.media.tumblr.com/86faeaf9ccfbf3f34119f47227b03792/b0a8fe31d8022afd-69/s540x810/65bad09737e97ab0a930ba9fb661e0332c9ea027.gif" alt="Andy Samberg">
-    <div class="card-info">
-        <h2 class="fc-name">Andy Samberg</h2>
-        <p>Date of Birth: Aug 18, 1978</p>
-        <p>Ethnicity: Jewish, Caucasian</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs/a/andy-samberg/b99-misc">Brooklyn 99</a></p>
-    </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1980s" data-eyecolor="brown" data-haircolor="black" data-ethnicity="british-african" data-gifcount="340">
-    <img src="https://66.media.tumblr.com/bc169b468255d54634ec75993585c313/ec988098eebce49a-19/s540x810/ac9505c8cb4de012080b8f92a900893834db88b9.gif" alt="Antonia Thomas">
-    <div class="card-info">
-        <h2 class="fc-name">Antonia Thomas</h2>
-        <p>Date of Birth: Nov 3, 1986</p>
-        <p>Ethnicity: British-African</p>
-        <p>Links: 
-            <a href="https://sites.google.com/view/tessgifs/a/antonia-thomas/the-good-doctor-3x01-3x05">The Good Doctor 3x01-3x05</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/antonia-thomas/the-good-doctor-ep-3x12-3x14">The Good Doctor 3.14-3.15</a>
-        </p>
-    </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1980s" data-eyecolor="brown" data-haircolor="blonde" data-ethnicity="caucasian" data-gifcount="450">
-    <img src="https://64.media.tumblr.com/52fa360666f283e7a2b433a2f2d52671/19c5c54ccaa3b585-2c/s540x810/b5de458da2f268692281ea1b193e3c1c1e0a6c3f.gif" alt="Arielle Kebbel">
-    <div class="card-info">
-        <h2 class="fc-name">Arielle Kebbel</h2>
-        <p>Date of Birth: Sep 19, 1985</p>
-        <p>Ethnicity: Caucasian</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs/a/arielle-kebbel/a-brush-with-love">A Brush With Love</a></p>
-    </div>
-</div>
-
-
-<div class="card" data-gender="male" data-decade="1980s" data-eyecolor="green" data-haircolor="brown" data-ethnicity="french" data-gifcount="323">
-    <img src="https://64.media.tumblr.com/9974e5974b5678352180eba01be69369/76228e43f6b1ef04-af/s540x810/e86e1c8903635d5b0b264e55e2960b066d31276e.gif" alt="Arnaud Valois">
-    <div class="card-info">
-        <h2 class="fc-name">Arnaud Valois</h2>
-        <p>Date of Birth: May 24, 1987</p>
-        <p>Ethnicity: French</p>
-        <p>Links: 
-            <a href="https://sites.google.com/view/tessgifs/a/arnaud-valois/120-bpm">120 BPM</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/arnaud-valois/spring-blossom">Spring Blossom</a>
-        </p>
-    </div>
-</div>
-
-<div class="card" data-gender="non-binary" data-decade="1980s" data-eyecolor="brown" data-haircolor="blonde" data-ethnicity="white">
-    <img src="https://66.media.tumblr.com/d1f81b2081de756516d5f21997165969/tumblr_inline_prhe9ckqIW1uy9est_540.gif" alt="Asia Kate Dillon">
-    <div class="card-info">
-        <h2 class="fc-name">Asia Kate Dillon</h2>
-        <p>Date of Birth: Mar 15, 1988</p>
-        <p>Ethnicity: White</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs/a/asia-kate-dillon/billions-4x07">Billions (4x07)</a></p>
-    </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1990s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="turkish" data-gifcount="515">
-    <img src="https://64.media.tumblr.com/657367afa74332fa22ea0002e095a3ba/d495bec393c6391e-e1/s540x810/3bb62bdb55cc36865a034072a2027c8db3791133.gif" alt="Asli Bekiroglu">
-    <div class="card-info">
-        <h2 class="fc-name">Asli Bekiroglu</h2>
-        <p>Date of Birth: Nov 16, 1995</p>
-        <p>Ethnicity: Turkish</p>
-        <p>Links: 
-            <a href="https://sites.google.com/view/tessgifs/a/asli-bekiroglu/benim-tatli-yalanim-misc">Benim Tatli Yalanim (Misc)</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/asli-bekiroglu/benim-tatli-yalanim-28">Benim Tatli Yalanim (28)</a>
-        </p>
-    </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1980s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="turkish-cypriot" data-gifcount="509">
-    <img src="https://64.media.tumblr.com/c4f9ff26f087c6babafa4cff092baa4b/cac9e15fcf865692-13/s540x810/e5400007ddef45f215d2a62ee36463e4d1641c35.gif" alt="Asli Enver">
-    <div class="card-info">
-        <h2 class="fc-name">Asli Enver</h2>
-        <p>Date of Birth: May 10, 1984</p>
-        <p>Ethnicity: Turkish-Cypriot</p>
-        <p>Links: 
-            <a href="https://sites.google.com/view/tessgifs/a/asli-enver/istanbullu-gelin-misc">Istanbullu Gelin (Misc)</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/asli-enver/istanbullu-gelin-69">Istanbullu Gelin</a>
-        </p>
-    </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1990s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="turkish" data-gifcount="956">
-    <img src="https://66.media.tumblr.com/65eab231e9269980dc628767ce897827/ec988098eebce49a-d8/s540x810/00dd588be535ccfd960ad8d0cb489daa12ab6be4.gif" alt="Aslihan Malbora">
-    <div class="card-info">
-        <h2 class="fc-name">Aslihan Malbora</h2>
-        <p>Date of Birth: Nov 18, 1990</p>
-        <p>Ethnicity: Turkish</p>
-        <p>Links: 
-            <a href="https://sites.google.com/view/tessgifs/a/aslihan-malbora/her-yerde-sen-22">Her Yerde Sen (22)</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/aslihan-malbora/gel-dese-ask-1-4">Gel Dese Ask (1+4)</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/aslihan-malbora/gecen-yaz">Gecen Yaz</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/aslihan-malbora/uc-kurus-16">Uc Kurus (16)</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/aslihan-malbora/uc-kurus-23-24">Uc Kurus (23-24)</a>
-        </p>
-    </div>
-</div>
-
-
-
-<div class="card" data-gender="female" data-decade="1990s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="turkish" data-gifcount="287">
-    <img src="https://64.media.tumblr.com/ec3773e48419af2f195eb182106f4a2f/a836ccf2bfa4c037-6e/s540x810/4eca5c4bd0e6d361a8c2ed84f789f1f3d602890c.gif" alt="Aybuke Pusat">
-    <div class="card-info">
-        <h2 class="fc-name">Aybuke Pusat</h2>
-        <p>Date of Birth: Feb 5, 1994</p>
-        <p>Ethnicity: Turkish</p>
-        <p>Links: <a href="https://sites.google.com/view/tessgifs/a/aybuke-pusat/her-yerde-sen-23">Her Yerde Sen</a></p>
-    </div>
-</div>
-
-<div class="card" data-gender="female" data-decade="1990s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="turkish" data-gifcount="5333">
-    <img src="https://64.media.tumblr.com/c713a33df3ec388c585876c72d398708/ec988098eebce49a-6a/s540x810/fac8eb55d0d491805702350689ca580046705923.gif" alt="Ayca Aysin Turan">
-    <div class="card-info">
-        <h2 class="fc-name">Ayca Aysin Turan</h2>
-        <p>Date of Birth: Oct 25, 1990</p>
-        <p>Ethnicity: Turkish</p>
-        <p>Links: 
-            <a href="https://sites.google.com/view/tessgifs2023/ayca-aysin-turan/zemhari-nav">Zemheri (Misc)</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/ayca-aysin-turan/the-protector-misc">The Protector</a>, 
-            <a href="https://sites.google.com/view/tessgifs2023/ayca-aysin-turan/ariza-nav">Ariza (Misc)</a>, 
-            <a href="https://sites.google.com/view/tessgifs2023/ayca-aysin-turan/ada-masali-nav">Ada Masali (Misc)</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/ayca-aysin-turan/meryem-29">Meryem (29)</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/ayca-aysin-turan/meryem-23">Meryem (23)</a>
-        </p>
-    </div>
-</div>
-
-<div class="card" data-gender="male" data-decade="1980s" data-eyecolor="brown" data-haircolor="brown" data-ethnicity="turkish" data-gifcount="967">
-    <img src="https://64.media.tumblr.com/f3d21760e71600987f00a09d21042fb5/a836ccf2bfa4c037-be/s540x810/835d700fa8ba27f45c1fbe1296c71c3c543f332d.gif" alt="Aytac Sasmaz">
-    <div class="card-info">
-        <h2 class="fc-name">Aytac Sasmaz</h2>
-        <p>Date of Birth: May 4, 1988</p>
-        <p>Ethnicity: Turkish</p>
-        <p>Links: 
-            <a href="https://sites.google.com/view/tessgifs/a/aytac-sasmaz/baht-oyunu-1">Baht Oyunu (1)</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/aytac-sasmaz/baht-oyunu-9">Baht Oyunu (9)</a>, 
-            <a href="https://sites.google.com/view/tessgifs/a/aytac-sasmaz/baht-oyunu-13">Baht Oyunu (13)</a>
-        </p>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-
-
-
-
-
-
-<script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const filters = {
-        gender: document.getElementById("genderFilter"),
-        decade: document.getElementById("decadeFilter"),
-        eyeColor: document.getElementById("eyeColorFilter"),
-        hairColor: document.getElementById("hairColorFilter"),
-        ethnicity: document.getElementById("ethnicityFilter"),
-        gifCount: document.getElementById("gifCountFilter"),
-    };
-
-    const cards = document.querySelectorAll(".card");
-
-    const filterCards = () => {
-        // Get filter values
-        const gender = filters.gender.value.toLowerCase();
-        const decade = filters.decade.value.toLowerCase();
-        const eyeColor = filters.eyeColor.value.toLowerCase();
-        const hairColor = filters.hairColor.value.toLowerCase();
-        const ethnicity = filters.ethnicity.value.toLowerCase();
-        const gifCount = filters.gifCount.value;
-
-        // Loop through all cards and apply filters
-        cards.forEach(card => {
-            // Get data-* attributes from each card
-            const cardGender = card.getAttribute("data-gender").toLowerCase();
-            const cardDecade = card.getAttribute("data-decade").toLowerCase();
-            const cardEyeColor = card.getAttribute("data-eyecolor").toLowerCase();
-            const cardHairColor = card.getAttribute("data-haircolor").toLowerCase();
-            const cardEthnicity = card.getAttribute("data-ethnicity").toLowerCase();
-            const cardGifCount = parseInt(card.getAttribute("data-gifcount"), 10) || 0;
-
-            // Check if card matches all active filters
-            const matchesGender = !gender || cardGender === gender;
-            const matchesDecade = !decade || cardDecade === decade;
-            const matchesEyeColor = !eyeColor || cardEyeColor === eyeColor;
-            const matchesHairColor = !hairColor || cardHairColor === hairColor;
-            const matchesEthnicity = !ethnicity || cardEthnicity === ethnicity;
-            const matchesGifCount = !gifCount || cardGifCount >= parseInt(gifCount, 10);
-
-            // Show or hide the card based on the filter match
-            if (matchesGender && matchesDecade && matchesEyeColor && matchesHairColor && matchesEthnicity && matchesGifCount) {
-                card.style.display = "block"; // Show the card
-            } else {
-                card.style.display = "none"; // Hide the card
-            }
-        });
-    };
-
-    // Add event listeners for each filter
-    Object.values(filters).forEach(filter => {
-        filter.addEventListener("change", filterCards);
-    });
-
-    // Initialize filter on page load
-    filterCards();
-});
-</script>
 
 </body>
 </html>
